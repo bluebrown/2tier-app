@@ -1,0 +1,31 @@
+apiVersion: v1
+data:
+  index.html: |-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Hello, Kubernetes</title>
+      <script type="module" defer>
+        const app = document.getElementById('app');
+        (async () => {
+          const posts = await (await fetch('http://backend/posts')).json()
+          for (const { id, title, author } of posts) {
+            app.append(Object.assign(
+              document.createElement('p'),
+              { textContent: title },
+            ))
+          }
+        })().catch(console.warn)
+      </script>
+    </head>
+    <body>
+      <div id="app"></div>
+    </body>
+    </html>
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: frontend-data
