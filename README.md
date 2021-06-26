@@ -591,22 +591,21 @@ kubectl get all -n dev
 {% details Output %}
 
 ```c
-NAME                            READY   STATUS             RESTARTS   AGE
-pod/curler                      0/1     CrashLoopBackOff   8          21m
-pod/backend-6f669dd665-fcjjx    1/1     Running            0          5s
-pod/frontend-574b664bdf-4zxw6   1/1     Running            0          5s
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/backend-6f669dd665-2h752    1/1     Running   0          6s
+pod/frontend-574b664bdf-xt928   1/1     Running   0          6s
 
 NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-service/backend    ClusterIP   10.43.244.175   <none>        80/TCP    5s
-service/frontend   ClusterIP   10.43.82.116    <none>        80/TCP    5s
+service/backend    ClusterIP   10.43.182.14    <none>        80/TCP    6s
+service/frontend   ClusterIP   10.43.127.225   <none>        80/TCP    6s
 
 NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/backend    1/1     1            1           5s
-deployment.apps/frontend   1/1     1            1           5s
+deployment.apps/backend    1/1     1            1           6s
+deployment.apps/frontend   1/1     1            1           6s
 
 NAME                                  DESIRED   CURRENT   READY   AGE
-replicaset.apps/backend-6f669dd665    1         1         1       5s
-replicaset.apps/frontend-574b664bdf   1         1         1       5s
+replicaset.apps/backend-6f669dd665    1         1         1       6s
+replicaset.apps/frontend-574b664bdf   1         1         1       6s
 ```
 
 {% enddetails %}
