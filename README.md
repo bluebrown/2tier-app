@@ -1,4 +1,4 @@
-# Kubernetes - Bootstrap Projects Imperative
+# Kubernetes - Bootstrap Declarative Projects Imperative
 
 There are several way resources can be created in Kubernetes. It is best practice to do it declarative via apply and yaml files. However, it can be a tedious task to write dozens of lines of error prone yaml by hand.
 
