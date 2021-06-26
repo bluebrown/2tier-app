@@ -331,10 +331,56 @@ kubectl expose -f objects/backend.deploy.yaml --port 80 --target-port 3000 --dry
   | tee objects/backend.svc.yaml
 ```
 
+{% details Output %}
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: backend
+  name: backend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: backend
+status:
+  loadBalancer: {}
+```
+
+{% enddetails %}
+
 ```shell
 kubectl expose -f objects/frontend.deploy.yaml --dry-run=client -o yaml \
   | tee objects/frontend.svc.yaml
 ```
+
+{% details Output %}
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: frontend
+  name: frontend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: frontend
+status:
+  loadBalancer: {}
+```
+
+{% enddetails %}
 
 ### Apply
 
