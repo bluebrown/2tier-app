@@ -2,7 +2,7 @@
 
 There are several way resources can be created in Kubernetes. It is best practice to do it declarative via apply and yaml files. However, it can be a tedious task to write dozens of lines of error prone yaml by hand.
 
-In this post I am going to explore options to to utilize kubectl imperative commands to bootstrap the declarative yaml files.
+In this post I am going to explore options to to utilize kubectl imperative commands to bootstrap the declarative yaml files.  You can find the full code [on github](https://github.com/bluebrown/2tier-app).
 
 ## Dry Run
 
@@ -603,4 +603,4 @@ That way we get the best from both worlds.
 
 ### Note
 
-Note that the services are not published on `NodePort`or via ingress controller. This is is subject for the next topic. You can still test the pages by running curl from a pod in the same namespace.
+The services are not published on `NodePort`or via ingress controller. This is is subject for the next topic. You can still test the pages by running curl from a pod in the same namespace.
